@@ -21,6 +21,7 @@ const Card = ({ user, tweets, avatar, initialFollowers }) => {
   );
 
   useEffect(() => {
+    const storedFollowers = localStorage.getItem(`${user}Followers`);
     if (storedFollowers) {
       setFollowers(parseInt(storedFollowers));
     }
