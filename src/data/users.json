@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "user": "Elon Reeve Musk",
+    "tweets": 777,
+    "followers": 100500,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1681553584/Hansel_xpx4za.png"
+  },
+  {
+    "id": 2,
+    "user": "Poly",
+    "tweets": 459,
+    "followers": 9457,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1680121929/areynqckgnuffswxinpj.jpg"
+  },
+  {
+    "id": 3,
+    "user": "Elosk",
+    "tweets": 924,
+    "followers": 398,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1680122904/lldj92np9deuloujqtuh.jpg"
+  },
+  {
+    "id": 4,
+    "user": "Reevusk",
+    "tweets": 34,
+    "followers": 987,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1680172763/sdhp1at6pp0hecgnkjny.jpg"
+  },
+  {
+    "id": 5,
+    "user": "Elona",
+    "tweets": 709,
+    "followers": 2321,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1679940854/hh7pcdo2anw4qhln7gsy.jpg"
+  },
+  {
+    "id": 6,
+    "user": "Natali",
+    "tweets": 14,
+    "followers": 145,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1679927386/bb11lnqtfiryoshpkv6r.png"
+  },
+  {
+    "id": 7,
+    "user": "Reeve Musk",
+    "tweets": 567,
+    "followers": 765,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1679927631/bqmt5pclaaiqxkuoyft7.png"
+  },
+  {
+    "id": 8,
+    "user": "Elon Reey",
+    "tweets": 1,
+    "followers": 0,
+    "avatar": "https://res.cloudinary.com/dqalk1upx/image/upload/v1679947329/xrhmkdb6k3qyi0f7btjs.jpg"
+  }
+]
