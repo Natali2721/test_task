@@ -1,20 +1,19 @@
 import React from 'react';
 import Card from 'components/Card/Card';
-import users from 'data/users';
 import { List } from 'styles/Element.styled';
-//import { fetchUsers } from 'Api/apiService';
 
-const CardList = () => {
+const CardList = ({ users, selectedOption }) => {
   return (
     <List>
       {users &&
-        users.map(({ avatar, user, id, tweets, followers }) => (
+        users.map(({ avatar, id, tweets, followers }) => (
           <Card
+            id={id}
             key={id}
-            user={user}
             tweets={tweets}
             initialFollowers={followers}
             avatar={avatar}
+            name={selectedOption.value}
           />
         ))}
     </List>
