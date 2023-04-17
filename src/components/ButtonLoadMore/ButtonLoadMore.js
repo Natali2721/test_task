@@ -7,9 +7,9 @@ const ButtonLoadMore = ({ text, onClick }) => (
   </LoadButton>
 );
 
-export default ButtonLoadMore;
-
 ButtonLoadMore.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
+
+export default ButtonLoadMore;
