@@ -1,7 +1,14 @@
 import axios from 'axios';
-const QUANTITY = 8;
+import QUANTITY from 'constans/limit';
+
 axios.defaults.baseURL = 'https://639cb5e116d1763ab152294c.mockapi.io/users';
 
-export const fetchUsers = (page = 1) => {
+const fetchUsers = (page = 1) => {
   return axios.get(`/?&limit=${QUANTITY}&page=${page}`);
 };
+
+const fetchAllUsers = () => {
+  return axios.get();
+};
+
+export { fetchUsers, fetchAllUsers };
