@@ -13,7 +13,6 @@ import options from 'constans/selectOptions';
 const Tweets = () => {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
-  const [total, setTotal] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isActive, setIsActive] = useState(true);
   const [selectedOption, setSelectedOption] = useState(options[0]);
@@ -34,7 +33,6 @@ const Tweets = () => {
               setIsActive(false);
             }
             setItems(prevState => [...prevState, ...res.data]);
-            setTotal(prevState => prevState + res.data.length);
             setIsLoading(false);
           });
         } catch (error) {
@@ -61,7 +59,6 @@ const Tweets = () => {
               );
             }
             setItems(res.data);
-            setTotal(res.data.length);
             setIsLoading(false);
             setIsActive(false);
           });
@@ -77,7 +74,6 @@ const Tweets = () => {
       setIsActive(true);
       setItems([]);
       setPage(1);
-      setTotal(null);
     }
   }, [selectedOption]);
 
