@@ -1,17 +1,105 @@
 import styled from 'styled-components';
 import picture from 'images/picture.png';
+import { Link } from 'react-router-dom';
+
+const Header = styled.header`
+  background-color: ${p => p.theme.colors.accent};
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+`;
+
+const HeaderContainer = styled.div`
+  padding: 0 32px;
+`;
 
 const Container = styled.div`
   padding: 16px 32px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+`;
+
+const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const HomeTitle = styled.h1`
+  color: hsl(269, 35%, 53%);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin: 10px auto;
+`;
+const HomeContainer = styled.div`
+  padding-top: 36px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const ButtonDirection = styled.button`
+  margin: 0 auto 20px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  color: hsl(257, 46%, 27%);
+  background-color: ${p => p.theme.colors.accent};
+  transition: transform 250ms linear;
+  transition: background-color 250ms linear;
+  &:hover {
+    background-color: hsl(269, 35%, 73%);
+    transform: scale(1.1);
+  }
+`;
+
+const LinkBack = styled(Link)`
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  gap: 10px;
+`;
+
+const SelectContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 10px;
+`;
+
+const SelectText = styled.p`
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(257, 46%, 27%);
+`;
+
+const SelectInput = styled.select`
+  width: 100px;
+  border-radius: 4px;
+  font-size: 14px;
 `;
 
 const List = styled.ul`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 48px;
+  gap: 28px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 768px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
 `;
 
 const ListItem = styled.li`
@@ -21,6 +109,9 @@ const ListItem = styled.li`
   background: ${p => p.theme.colors.cardBackground};
   box-shadow: ${p => p.theme.boxShadow.card};
   border-radius: ${p => p.theme.radii.card};
+  &.none {
+    display: none;
+  }
 `;
 
 const AvatarBox = styled.div`
@@ -102,12 +193,16 @@ const Button = styled.button`
   font-weight: ${p => p.theme.fontWeight.bold};
   text-transform: uppercase;
   background-color: ${p => p.theme.colors.accent};
-
   border-radius: ${p => p.theme.radii.button};
   cursor: pointer;
   box-shadow: ${p => p.theme.boxShadow.button};
   transition: color 250ms linear;
   transition: background-color 250ms linear;
+  transition: transform 250ms linear;
+
+  &:hover {
+    transform: scale(1.1);
+  }
   &.active {
     background-color: ${p => p.theme.colors.buttonActiveBg};
   }
@@ -119,7 +214,7 @@ const LoadButton = styled.button`
   max-width: fit-content;
   margin-top: 32px;
   border: none;
-  border-radius: 15px;
+  border-radius: 8px;
   background-color: #3f51b5;
   color: white;
   text-decoration: none;
@@ -133,8 +228,10 @@ const LoadButton = styled.button`
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   transition: background-color 250ms linear;
+  transition: transform 250ms linear;
   &:hover {
     background-color: #303f9f;
+    transform: scale(1.1);
   }
 `;
 
@@ -142,13 +239,23 @@ export {
   Avatar,
   AvatarImg,
   Button,
+  ButtonDirection,
+  Header,
+  HeaderContainer,
+  HomeContainer,
+  HomeTitle,
+  LinkBack,
   List,
   ListItem,
   LoadButton,
+  LoaderContainer,
   AvatarBox,
   LogoImg,
   Container,
   Text,
   PictureBox,
+  SelectContainer,
+  SelectInput,
+  SelectText,
   ContentBox,
 };
