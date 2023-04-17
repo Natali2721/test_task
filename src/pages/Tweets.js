@@ -51,7 +51,6 @@ const Tweets = () => {
         setIsLoading(true);
         try {
           await fetchAllUsers().then(res => {
-            console.log(res.data);
             if (!res.data.length) {
               setIsActive(false);
               return Notiflix.Notify.failure(
