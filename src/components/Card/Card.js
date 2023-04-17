@@ -13,23 +13,20 @@ import {
   Button,
 } from 'styles/Element.styled';
 
-const Card = ({ user, tweets, avatar, initialFollowers }) => {
-  const storedFollowers = localStorage.getItem(`${user}Followers`);
-
-  const [followers, setFollowers] = useState(
-    storedFollowers || initialFollowers
-  );
+const Card = ({ id, tweets, avatar, initialFollowers, name }) => {
+  const [followers, setFollowers] = useState(initialFollowers);
+  //console.log(name);
 
   useEffect(() => {
-    const storedFollowers = localStorage.getItem(`${user}Followers`);
+    const storedFollowers = localStorage.getItem(`${id}`);
     if (storedFollowers) {
       setFollowers(parseInt(storedFollowers));
     }
-  }, [user]);
+  }, [id]);
 
   useEffect(() => {
-    localStorage.setItem(`${user}Followers`, followers.toString());
-  }, [followers, user]);
+    localStorage.setItem(`${id}`, followers.toString());
+  }, [followers, id]);
 
   const getFollowers = followers => {
     if (followers > 999) {
@@ -53,9 +50,10 @@ const Card = ({ user, tweets, avatar, initialFollowers }) => {
   };
 
   const buttonStatus = getButtonStatus(followers);
+  //console.log(buttonStatus);
 
   return (
-    <ListItem>
+    <ListItem className={buttonStatus === name || name === 'all' ? '' : 'none'}>
       <AvatarBox>
         <PictureBox />
         <LogoImg src={Logo} alt="Logo" width="76px" height="22px" />
@@ -84,7 +82,7 @@ const Card = ({ user, tweets, avatar, initialFollowers }) => {
 };
 
 Card.propTypes = {
-  user: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   avatar: PropTypes.string.isRequired,
   tweets: PropTypes.number.isRequired,
   initialFollowers: PropTypes.number.isRequired,
