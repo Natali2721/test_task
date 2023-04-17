@@ -1,23 +1,20 @@
-import React, { Fragment } from 'react';
-import GlobalStyle from 'styles/globalStyles';
-import CardList from './CardList/CardList';
-import ButtonLoadMore from './ButtonLoadMore/ButtonLoadMore';
-import { Container } from 'styles/Element.styled';
+import { Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import Layout from './Layout/Layout';
+
+const HomePage = lazy(() => import('../pages/Home'));
+
+const TweetsPage = lazy(() => import('../pages/Tweets'));
 
 const App = () => {
-  const onClickLoadMore = () => {
-    //setPage(prevState => prevState + 1);
-    console.log('load');
-  };
-
   return (
-    <Fragment>
-      <GlobalStyle />
-      <Container>
-        <CardList />
-        <ButtonLoadMore text="Load More" onClick={onClickLoadMore} />
-      </Container>
-    </Fragment>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/tweets" element={<TweetsPage />} />
+        <Route path="*" element={<HomePage />} />
+      </Route>
+    </Routes>
   );
 };
 
